@@ -400,7 +400,9 @@ const faqs = [
 
 function Container({ children, className = "" }) {
   return (
-    <div className={`mx-auto w-full max-w-[1380px] px-5 sm:px-8 lg:px-10 ${className}`}>
+    <div
+      className={`mx-auto w-full max-w-[1380px] px-5 sm:px-8 lg:px-10 ${className}`}
+    >
       {children}
     </div>
   );
@@ -472,11 +474,7 @@ function QrisLogo() {
 }
 
 function BankLogo() {
-  return (
-    <span className="payment-text payment-bank">
-      BANK
-    </span>
-  );
+  return <span className="payment-text payment-bank">BANK</span>;
 }
 
 function PaymentMethods() {
@@ -635,9 +633,7 @@ function MarketTicker() {
             key={`${symbol}-${index}`}
             className="flex h-[34px] items-center gap-2 border-r border-white/[0.05] px-5"
           >
-            <span className="text-[10px] font-black text-white">
-              {symbol}
-            </span>
+            <span className="text-[10px] font-black text-white">{symbol}</span>
             <span className="text-[9px] font-medium uppercase tracking-wide text-white/35">
               {name}
             </span>
@@ -777,9 +773,7 @@ function HeroTerminal() {
               <div className="text-[10px] font-bold text-white/40">
                 {symbol}
               </div>
-              <div className="mt-1 text-sm font-black text-white">
-                {price}
-              </div>
+              <div className="mt-1 text-sm font-black text-white">{price}</div>
               <div className="mt-1 text-[9px] font-bold text-[#B7FF4A]">
                 {change}
               </div>
@@ -828,9 +822,7 @@ function HeroTerminal() {
             <div className="text-[9px] uppercase tracking-widest text-white/30">
               Equity
             </div>
-            <div className="mt-1 text-sm font-black text-white">
-              $52,481.20
-            </div>
+            <div className="mt-1 text-sm font-black text-white">$52,481.20</div>
           </div>
 
           <div className="border-l border-white/[0.07] px-4 py-4">
@@ -894,9 +886,9 @@ function Company() {
           <div>
             <p className="max-w-2xl text-lg leading-8 text-white/50">
               NEXTRADE is positioned as a modern trading evaluation and
-              performance platform. Instead of selling the dream of easy
-              money, the concept focuses on giving traders a structured
-              environment to prove their process.
+              performance platform. Instead of selling the dream of easy money,
+              the concept focuses on giving traders a structured environment to
+              prove their process.
             </p>
 
             <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -934,12 +926,36 @@ function Company() {
 
 function History() {
   const timeline = [
-    ["2021", "Concept", "The original idea starts from the gap between retail traders and structured trading environments."],
-    ["2022", "Research", "The business model is shaped around evaluation, performance measurement, and digital delivery."],
-    ["2023", "Prototype", "NEXTRADE evolves into a digital-first trading evaluation platform concept."],
-    ["2024", "Expansion", "The platform vision expands toward multiple markets, account sizes, and trader progression."],
-    ["2025", "Product System", "Evaluation rules, reward structures, customer journey, and platform experience are formalized."],
-    ["2026", "NEXTRADE", "The concept is presented as an academic digital marketing business prototype."],
+    [
+      "2021",
+      "Concept",
+      "The original idea starts from the gap between retail traders and structured trading environments.",
+    ],
+    [
+      "2022",
+      "Research",
+      "The business model is shaped around evaluation, performance measurement, and digital delivery.",
+    ],
+    [
+      "2023",
+      "Prototype",
+      "NEXTRADE evolves into a digital-first trading evaluation platform concept.",
+    ],
+    [
+      "2024",
+      "Expansion",
+      "The platform vision expands toward multiple markets, account sizes, and trader progression.",
+    ],
+    [
+      "2025",
+      "Product System",
+      "Evaluation rules, reward structures, customer journey, and platform experience are formalized.",
+    ],
+    [
+      "2026",
+      "NEXTRADE",
+      "The concept is presented as an academic digital marketing business prototype.",
+    ],
   ];
 
   return (
@@ -967,9 +983,7 @@ function History() {
                 key={year}
                 className="grid gap-4 py-6 sm:grid-cols-[90px_150px_1fr]"
               >
-                <div className="text-sm font-black text-[#B7FF4A]">
-                  {year}
-                </div>
+                <div className="text-sm font-black text-[#B7FF4A]">{year}</div>
 
                 <div className="text-sm font-bold text-white">{title}</div>
 
@@ -1015,9 +1029,9 @@ function Founder() {
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/45">
               NEXTRADE is founded around the intersection of trading,
-              technology, digital products, and performance management.
-              The goal is to make the evaluation experience clearer,
-              measurable, and accessible to modern traders.
+              technology, digital products, and performance management. The goal
+              is to make the evaluation experience clearer, measurable, and
+              accessible to modern traders.
             </p>
 
             <div className="mt-8 border-l-2 border-[#B7FF4A] pl-5">
@@ -1078,17 +1092,11 @@ function Markets() {
               key={title}
               className="bg-[#0A0F16] p-7 transition hover:bg-[#0D131C]"
             >
-              <div className="text-xs font-black text-[#B7FF4A]">
-                {number}
-              </div>
+              <div className="text-xs font-black text-[#B7FF4A]">{number}</div>
 
-              <h3 className="mt-16 text-xl font-black text-white">
-                {title}
-              </h3>
+              <h3 className="mt-16 text-xl font-black text-white">{title}</h3>
 
-              <p className="mt-3 text-xs leading-5 text-white/35">
-                {subtitle}
-              </p>
+              <p className="mt-3 text-xs leading-5 text-white/35">{subtitle}</p>
             </div>
           ))}
         </div>
@@ -1096,32 +1104,28 @@ function Markets() {
 
       <div className="overflow-hidden border-y border-white/[0.06] bg-[#090D13]">
         <div className="market-scroll flex min-w-max">
-          {[...marketAssets, ...marketAssets].map(
-            ([symbol, name], index) => (
-              <div
-                key={`${symbol}-${index}`}
-                className="flex h-20 min-w-[180px] items-center gap-4 border-r border-white/[0.05] px-7"
-              >
-                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-[9px] font-black text-white">
-                  {symbol.slice(0, 4)}
-                </div>
+          {[...marketAssets, ...marketAssets].map(([symbol, name], index) => (
+            <div
+              key={`${symbol}-${index}`}
+              className="flex h-20 min-w-[180px] items-center gap-4 border-r border-white/[0.05] px-7"
+            >
+              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-[9px] font-black text-white">
+                {symbol.slice(0, 4)}
+              </div>
 
-                <div>
-                  <div className="text-xs font-black text-white">
-                    {symbol}
-                  </div>
+              <div>
+                <div className="text-xs font-black text-white">{symbol}</div>
 
-                  <div className="mt-1 text-[9px] uppercase tracking-wider text-white/30">
-                    {name}
-                  </div>
-                </div>
-
-                <div className="ml-auto text-[10px] font-bold text-[#B7FF4A]">
-                  +{(0.21 + (index % 8) * 0.14).toFixed(2)}%
+                <div className="mt-1 text-[9px] uppercase tracking-wider text-white/30">
+                  {name}
                 </div>
               </div>
-            )
-          )}
+
+              <div className="ml-auto text-[10px] font-bold text-[#B7FF4A]">
+                +{(0.21 + (index % 8) * 0.14).toFixed(2)}%
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -1134,14 +1138,33 @@ function Markets() {
 
 function HowItWorks() {
   const steps = [
-    ["01", "Choose", "Select an evaluation model and account size that fits your trading style."],
-    ["02", "Trade", "Follow the rules, manage your risk, and execute your strategy."],
-    ["03", "Prove", "Demonstrate consistency against the defined performance criteria."],
-    ["04", "Progress", "Move forward and unlock the next stage of the trader journey."],
+    [
+      "01",
+      "Choose",
+      "Select an evaluation model and account size that fits your trading style.",
+    ],
+    [
+      "02",
+      "Trade",
+      "Follow the rules, manage your risk, and execute your strategy.",
+    ],
+    [
+      "03",
+      "Prove",
+      "Demonstrate consistency against the defined performance criteria.",
+    ],
+    [
+      "04",
+      "Progress",
+      "Move forward and unlock the next stage of the trader journey.",
+    ],
   ];
 
   return (
-    <section id="how-it-works" className="border-t border-white/[0.06] bg-[#080C12]">
+    <section
+      id="how-it-works"
+      className="border-t border-white/[0.06] bg-[#080C12]"
+    >
       <Container className="py-24 lg:py-32">
         <SectionLabel>How It Works</SectionLabel>
 
@@ -1156,13 +1179,9 @@ function HowItWorks() {
                 <ArrowUpRight size={16} className="text-white/20" />
               </div>
 
-              <h3 className="mt-20 text-2xl font-black text-white">
-                {title}
-              </h3>
+              <h3 className="mt-20 text-2xl font-black text-white">{title}</h3>
 
-              <p className="mt-4 text-sm leading-6 text-white/40">
-                {text}
-              </p>
+              <p className="mt-4 text-sm leading-6 text-white/40">{text}</p>
             </div>
           ))}
         </div>
@@ -1200,9 +1219,9 @@ function Accounts() {
           </h2>
 
           <p className="mt-5 text-sm leading-7 text-white/40">
-            Select an evaluation model, then choose the account size. All
-            values below are illustrative assumptions for the NEXTRADE
-            academic prototype.
+            Select an evaluation model, then choose the account size. All values
+            below are illustrative assumptions for the NEXTRADE academic
+            prototype.
           </p>
         </div>
 
@@ -1225,9 +1244,7 @@ function Accounts() {
                 </div>
               )}
 
-              <div className="text-lg font-black text-white">
-                {item.name}
-              </div>
+              <div className="text-lg font-black text-white">{item.name}</div>
 
               <div className="mt-3 max-w-[270px] text-xs leading-5 text-white/45">
                 {item.subtitle}
@@ -1259,9 +1276,7 @@ function Accounts() {
                 </div>
               )}
 
-              <div className="mt-3 text-[12px] text-white/40">
-                Account
-              </div>
+              <div className="mt-3 text-[12px] text-white/40">Account</div>
 
               <div className="mt-1 text-4xl font-black tracking-tight text-white">
                 {item.account}
@@ -1300,9 +1315,7 @@ function Accounts() {
 
             <div className="text-sm font-medium text-white/45">
               Avg. Reward:
-              <span className="ml-2 font-black text-[#B7FF4A]">
-                $89.04
-              </span>
+              <span className="ml-2 font-black text-[#B7FF4A]">$89.04</span>
             </div>
           </div>
 
@@ -1382,9 +1395,7 @@ function Accounts() {
 function RuleCard({ title, rows }) {
   return (
     <div className="rounded-xl border border-white/[0.07] bg-[#0B0D16] p-5">
-      <div className="mb-5 text-sm font-bold text-white/45">
-        {title}
-      </div>
+      <div className="mb-5 text-sm font-bold text-white/45">{title}</div>
 
       <div className="space-y-4">
         {rows.map(([label, value]) => (
@@ -1415,10 +1426,26 @@ function RuleCard({ title, rows }) {
 
 function BusinessModel() {
   const items = [
-    ["01", "Evaluation Fees", "Revenue generated from trader evaluation packages."],
-    ["02", "Trader Progression", "Structured progression creates a long-term customer journey."],
-    ["03", "Digital Platform", "A scalable technology layer supports account and performance management."],
-    ["04", "Community & Content", "Education and community create additional brand touchpoints."],
+    [
+      "01",
+      "Evaluation Fees",
+      "Revenue generated from trader evaluation packages.",
+    ],
+    [
+      "02",
+      "Trader Progression",
+      "Structured progression creates a long-term customer journey.",
+    ],
+    [
+      "03",
+      "Digital Platform",
+      "A scalable technology layer supports account and performance management.",
+    ],
+    [
+      "04",
+      "Community & Content",
+      "Education and community create additional brand touchpoints.",
+    ],
   ];
 
   return (
@@ -1442,13 +1469,9 @@ function BusinessModel() {
                   {number}
                 </div>
 
-                <h3 className="mt-12 text-lg font-black text-white">
-                  {title}
-                </h3>
+                <h3 className="mt-12 text-lg font-black text-white">{title}</h3>
 
-                <p className="mt-3 text-sm leading-6 text-white/40">
-                  {text}
-                </p>
+                <p className="mt-3 text-sm leading-6 text-white/40">{text}</p>
               </div>
             ))}
           </div>
@@ -1532,9 +1555,9 @@ function Proposal() {
               </h2>
 
               <p className="mt-6 max-w-xl text-sm leading-7 text-white/40">
-                Start with the account model that matches your trading
-                approach. Follow the rules. Track your performance. Progress
-                when your process proves itself.
+                Start with the account model that matches your trading approach.
+                Follow the rules. Track your performance. Progress when your
+                process proves itself.
               </p>
 
               <div className="mt-8">
@@ -1669,8 +1692,8 @@ function FinalCTA() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-white/40">
-            Explore the NEXTRADE account programs and choose the model that
-            fits your trading process.
+            Explore the NEXTRADE account programs and choose the model that fits
+            your trading process.
           </p>
 
           <div className="mt-8 flex justify-center">
@@ -1714,15 +1737,24 @@ function Footer() {
             </div>
 
             <div className="mt-4 flex flex-col gap-3">
-              <a href="#company" className="text-xs text-white/45 hover:text-white">
+              <a
+                href="#company"
+                className="text-xs text-white/45 hover:text-white"
+              >
                 Company
               </a>
 
-              <a href="#markets" className="text-xs text-white/45 hover:text-white">
+              <a
+                href="#markets"
+                className="text-xs text-white/45 hover:text-white"
+              >
                 Markets
               </a>
 
-              <a href="#accounts" className="text-xs text-white/45 hover:text-white">
+              <a
+                href="#accounts"
+                className="text-xs text-white/45 hover:text-white"
+              >
                 Accounts
               </a>
 
@@ -1738,34 +1770,29 @@ function Footer() {
             </div>
 
             <div className="mt-4 flex flex-col gap-3">
-              <span className="text-xs text-white/45">
-                Indonesia
-              </span>
+              <span className="text-xs text-white/45">Indonesia</span>
 
-              <span className="text-xs text-white/45">
-                Southeast Asia
-              </span>
+              <span className="text-xs text-white/45">Southeast Asia</span>
 
-              <span className="text-xs text-white/45">
-                Trading Technology
-              </span>
+              <span className="text-xs text-white/45">Trading Technology</span>
             </div>
           </div>
         </div>
 
         <div className="mt-12 border-t border-white/[0.06] pt-7">
           <p className="max-w-5xl text-[10px] leading-5 text-white/20">
-            DISCLAIMER — NEXTRADE is presented as an academic business and
-            digital marketing prototype. Account sizes, prices, profit
-            targets, drawdown limits, reward splits, payment methods, and
-            business assumptions displayed on this website are illustrative
-            and do not constitute a public financial offer, investment
-            recommendation, brokerage service, or guarantee of profit.
+            DISCLAIMER — NEXTRADE is a proprietary trading evaluation platform.
+            All trading activities are conducted within simulated virtual
+            accounts. NEXTRADE does not provide investment advice, financial
+            recommendations, or brokerage services. Account parameters, drawdown
+            limits, and profit split allocations are binding and governed by the
+            selected program policies. Trading financial markets involves a
+            substantial risk of capital loss.
           </p>
 
           <div className="mt-5 flex flex-col justify-between gap-3 text-[10px] text-white/20 sm:flex-row">
-            <span>© 2026 NEXTRADE. Academic Prototype.</span>
-            <span>Designed for Digital Marketing Project</span>
+            <span>© 2026 NEXTRADE.The Next Generation of Trading.</span>
+            <span>Funded Platform</span>
           </div>
         </div>
       </Container>
